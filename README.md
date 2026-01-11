@@ -1,7 +1,9 @@
-# Animated Personal Portfolio
+Benson – Applied Engineering & Technical Portfolio
 
-A modern, animated personal portfolio website built with HTML, CSS, and JavaScript.
+This repository contains my main professional portfolio website, showcasing applied engineering projects, web development work, and hands-on experience in image annotation for computer vision applications.
 
+A dedicated image annotation portfolio with detailed samples and QA workflows is available here:
+👉 https://benson-annotation.netlify.app/
 ## 🚀 Features
 
 - **Responsive Design**: Works perfectly on all devices
