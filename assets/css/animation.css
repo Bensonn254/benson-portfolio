@@ -1,0 +1,148 @@
+/* Animation Styles */
+
+/* Hero Section Animations */
+.hero-image-animation {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content-animation {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navbar Animation */
+.navbar {
+    animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Animations - Consolidated */
+.service-card,
+.project-card {
+    animation: fadeInUp 0.8s ease-out both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 209, 255, 0.3);
+}
+
+/* Button Animations */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 209, 255, 0.4);
+}
+
+/* Staggered Animation Delays */
+.hero-container > div {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.navbar ul li {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.navbar .logo {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.navbar .cvbtn {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading Animation */
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+    .hero-image-animation,
+    .hero-content-animation {
+        animation-duration: 0.8s;
+    }
+    
+    .service-card,
+    .project-card {
+        animation-duration: 0.6s;
+    }
+}

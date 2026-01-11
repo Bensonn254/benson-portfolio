@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thamani Cakes - Fresh Custom Cakes & Pastries in Kitengela</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMBCX8C9KE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PMBCX8C9KE');
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Thamani Cakes</h1>
+            <p class="hero-tagline">Fresh Custom Cakes & Pastries in Kitengela</p>
+            <a href="https://wa.me/254743052401?text=Hi%20Thamani%20Cakes!%20I'd%20like%20to%20order%20a%20cake.%20Can%20you%20help%20me?" class="btn-primary">
+                <span>💬</span>
+                Order on WhatsApp
+            </a>
+            <p class="hero-subtext">⚡ Order in 2 minutes</p>
+            
+            <div class="trust-badges">
+                <div class="badge">
+                    <span class="badge-icon">🚚</span>
+                    <span>Same-Day Delivery</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✨</span>
+                    <span>100% Fresh Ingredients</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">⭐</span>
+                    <span>4.0 Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-section" id="order-form">
+        <div class="container">
+            <h2 class="section-title">Quick Order Form</h2>
+            <div class="order-form-container">
+                <form id="quickOrderForm" class="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">Full Name *</label>
+                            <input type="text" id="customerName" name="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Phone Number *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="07XX XXX XXX" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderType">Order Type *</label>
+                        <select id="orderType" name="orderType" required>
+                            <option value="">Select order type</option>
+                            <option value="birthday-cake">Birthday Cake - From KSh 1,500</option>
+                            <option value="wedding-cake">Wedding Cake - From KSh 5,000</option>
+                            <option value="cupcakes">Cupcakes & Mini Treats - From KSh 20/pc</option>
+                            <option value="bread-pastries">Fresh Bread & Pastries - From KSh 50</option>
+                            <option value="custom-cake">Custom Cake - Custom Quote</option>
+                            <option value="seasonal">Seasonal Specials - Varies</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderDetails">Order Details *</label>
+                        <textarea id="orderDetails" name="orderDetails" rows="4" placeholder="Please describe your order (flavor, size, quantity, special requests, delivery date, etc.)" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryLocation">Delivery Location</label>
+                        <input type="text" id="deliveryLocation" name="deliveryLocation" placeholder="Enter your address or 'Pickup from bakery'">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryDate">Preferred Delivery Date *</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary order-btn">
+                        <span>📱</span>
+                        Send Order via WhatsApp
+                    </button>
+                </form>
+                
+                <div class="payment-info">
+                    <h3>Payment Information</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <h4>💰 Cash on Delivery</h4>
+                            <p>Pay when you receive your order</p>
+                            <p>Available for all Kitengela deliveries</p>
+                        </div>
+                    </div>
+                    <p class="payment-note">We'll confirm your order and total amount via WhatsApp within 30 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Our Delicious Selection</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/birthday_cake.jpg" 
+                             srcset="assets/images/birthday_cake.jpg 300w,
+                                     assets/images/birthday_cake.jpg 500w,
+                                     assets/images/birthday_cake.jpg 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Birthday Cake" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Birthday Cakes</h3>
+                        <p class="product-description">Celebrate special moments with our custom birthday cakes. Available in chocolate, vanilla, and red velvet.</p>
+                        <div class="product-footer">
+                            <span class="product-price">From KSh 1,500</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20order%20a%20Birthday%20Cake.%20Can%20you%20help%20me?" class="btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=300&h=250&fit=crop&auto=format" 
+                             srcset="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=300&h=250&fit=crop&auto=format 300w,
+                                     https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=500&h=400&fit=crop&auto=format 500w,
+                                     https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800&h=600&fit=crop&auto=format 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Wedding Cake" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Wedding Cakes</h3>
+                        <p class="product-description">Elegant multi-tier wedding cakes designed to make your big day unforgettable.</p>
+                        <div class="product-footer">
+                            <span class="product-price">From KSh 5,000</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20order%20a%20Wedding%20Cake.%20Can%20you%20help%20me?" class="btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=300&h=250&fit=crop&auto=format" 
+                             srcset="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=300&h=250&fit=crop&auto=format 300w,
+                                     https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=500&h=400&fit=crop&auto=format 500w,
+                                     https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=800&h=600&fit=crop&auto=format 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Cupcakes" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Cupcakes & Mini Treats</h3>
+                        <p class="product-description">Perfect for parties! Assorted flavors and decorations available. Minimum order: 12 pieces.</p>
+                        <div class="product-footer">
+                            <span class="product-price">From KSh 20/pc</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20order%20Cupcakes.%20Can%20you%20help%20me?" class="btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=250&fit=crop&auto=format" 
+                             srcset="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=250&fit=crop&auto=format 300w,
+                                     https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=400&fit=crop&auto=format 500w,
+                                     https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop&auto=format 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Fresh Bread" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Fresh Bread & Pastries</h3>
+                        <p class="product-description">Daily fresh baked bread, croissants, doughnuts, and mandazis. Baked every morning!</p>
+                        <div class="product-footer">
+                            <span class="product-price">From KSh 50</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20order%20Bread%20and%20Pastries.%20Can%20you%20help%20me?" class="btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=300&h=250&fit=crop&auto=format" 
+                             srcset="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=300&h=250&fit=crop&auto=format 300w,
+                                     https://images.unsplash.com/photo-1562440499-64c9a111f713?w=500&h=400&fit=crop&auto=format 500w,
+                                     https://images.unsplash.com/photo-1562440499-64c9a111f713?w=800&h=600&fit=crop&auto=format 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Custom Cake" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Custom Cakes</h3>
+                        <p class="product-description">Got a unique idea? We bring your dream cake to life with custom designs and flavors.</p>
+                        <div class="product-footer">
+                            <span class="product-price">Custom Quote</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20request%20a%20Custom%20Cake.%20Can%20you%20help%20me?" class="btn-small">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=300&h=250&fit=crop&auto=format" 
+                             srcset="https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=300&h=250&fit=crop&auto=format 300w,
+                                     https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=500&h=400&fit=crop&auto=format 500w,
+                                     https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=800&h=600&fit=crop&auto=format 800w"
+                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                             alt="Seasonal Specials" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Seasonal Specials</h3>
+                        <p class="product-description">Check out our limited-time seasonal flavors and holiday-themed treats!</p>
+                        <div class="product-footer">
+                            <span class="product-price">Varies</span>
+                            <a href="https://wa.me/254743052401?text=Hi!%20I'd%20like%20to%20know%20about%20Seasonal%20Specials.%20Can%20you%20help%20me?" class="btn-small">Ask Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Cake Section -->
+    <section class="custom-section">
+        <div class="container">
+            <h2>Dream Cake? Let's Create It Together</h2>
+            <p>From superheroes to unicorns, corporate logos to wedding masterpieces—we make it happen!</p>
+            
+            <div class="custom-steps">
+                <div class="step">
+                    <div class="step-icon">💬</div>
+                    <div class="step-text">1. Tell us your idea</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">✏️</div>
+                    <div class="step-text">2. We design & quote</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🍰</div>
+                    <div class="step-text">3. We bake & deliver</div>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/254743052401?text=Hi%20Thamani%20Cakes!%20I'd%20like%20to%20request%20a%20custom%20cake.%20Here's%20my%20idea:%20" class="btn-primary">
+                <span>🎨</span>
+                Request Custom Quote on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Visit Our Bakery</h2>
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div class="info-content">
+                            <h3>Address</h3>
+                            <p>FWJW+9R7, Namanga Road<br>Kitengela, Kenya</p>
+                            <a href="https://maps.google.com/?q=FWJW+9R7,Namanga+Road,Kitengela" class="btn-secondary" style="margin-top: 12px; display: inline-flex;">
+                                <span>🗺️</span>
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">🕐</span>
+                        <div class="info-content">
+                            <h3>Opening Hours</h3>
+                            <ul class="hours-list">
+                                <li><strong>Monday - Friday:</strong> 7:00 AM - 7:00 PM</li>
+                                <li><strong>Saturday:</strong> 8:00 AM - 8:00 PM</li>
+                                <li><strong>Sunday:</strong> 9:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div class="info-content">
+                            <h3>Contact</h3>
+                            <p>WhatsApp: <a href="https://wa.me/254743052401">+254 743 052 401</a><br>
+                            Email: bensonannotations@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7654321098!2d36.98765432109876!3d-1.23456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDcnMDcuNiJTIDEwMsKwNTknMjUuNCJF!5e0!3m2!1sen!2ske!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Thamani Cakes</h3>
+                    <p class="hero-tagline" style="font-size: 16px; margin-bottom: 12px;">Fresh Custom Cakes & Pastries</p>
+                    <div class="social-proof">
+                        <span>⭐⭐⭐⭐</span>
+                        <span>4.0 on Google </span>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Trusted by 100+ Kitengela families</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="quick-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#products">Our Menu</a></li>
+                        <li><a href="https://wa.me/254743052401">Order Now</a></li>
+                        <li><a href="https://wa.me/254743052401">Custom Cakes</a></li>
+                    </ul>
+                    <p style="margin-top: 16px;"><strong>Payment:</strong> M-Pesa, Cash, Bank Transfer</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <p>📱 <a href="tel:+254743052401">+254 743 052 401</a></p>
+                    <p>💬 <a href="https://wa.me/254743052401">WhatsApp Us</a></p>
+                    <p>📧 bensonannotations@gmail.com</p>
+                    <div style="margin-top: 16px;">
+                        <a href="https://wa.me/254743052401" class="btn-primary" style="font-size: 14px; padding: 10px 24px;">
+                            <span>💬</span>
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 24px;">
+                        <a href="#" style="margin-right: 12px;">📷</a>
+                        <a href="#">👍</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 Thamani Cakes. All rights reserved. | Kitengela, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/254743052401?text=Hi%20Thamani%20Cakes!%20I'd%20like%20to%20order%20a%20cake." class="sticky-whatsapp" aria-label="Order on WhatsApp">
+        💬
+    </a>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
