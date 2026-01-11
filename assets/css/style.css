@@ -271,7 +271,9 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 5% 0;
-    min-height: 90vh;
+    min-height: 100svh;
+    min-height:100dvh;
+
     overflow: hidden;
 }
 
@@ -1742,8 +1744,8 @@ section {
     .hero-container {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 5%;
-        gap: 2rem;
+        padding: 1.25rem 5%0;
+        gap: 1.25rem;
         min-height: auto;
     }
     
