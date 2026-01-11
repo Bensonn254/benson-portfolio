@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ben-portfolio.netlify.app/sitemap.xml
+Sitemap: https://ben-main-portfolio.netlify.app/sitemap.xml
 
 # Block common non-content paths
 Disallow: /assets/
