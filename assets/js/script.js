@@ -75,25 +75,11 @@ function initNavigation() {
     if (nav.dataset.navInit === '1') return;
     nav.dataset.navInit = '1';
 
-    // Create underline element (disabled)
-    // let underline = nav.querySelector('.nav-underline');
-    // if (!underline) {
-    //     underline = document.createElement('span');
-    //     underline.className = 'nav-underline';
-    //     nav.appendChild(underline);
-    // }
-
     const links = Array.from(nav.querySelectorAll('a'));
-
-    function moveUnderline(link) {
-        // Underline functionality disabled
-        return;
-    }
 
     function setActive(link) {
         links.forEach(l => l.classList.remove('active'));
         if (link) link.classList.add('active');
-        moveUnderline(link);
     }
 
     // Determine active page
@@ -126,41 +112,7 @@ function initNavigation() {
     }
 
     setActive(activeLink || links[0]);
-
-    // Update underline on resize
-    window.addEventListener('resize', () => {
-        const active = nav.querySelector('a.active');
-        moveUnderline(active);
-    });
-
-    // Update underline on click
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            setTimeout(() => moveUnderline(link), 100);
-        });
-    });
 }
-
-// ============================================
-// 4. TYPED.JS INITIALIZATION
-// ============================================
-document.addEventListener("DOMContentLoaded", function () {
-  const typedTarget = document.querySelector(".typed-text");
-
-  if (typedTarget) {
-    new Typed(typedTarget, {
-      strings: [
-        "Petroleum Engineer,",
-        "an Aspiring Web Developer,",
-        "Data Annotation Specialist, Based in Nairobi."
-      ],
-      typeSpeed: 60,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true
-    });
-  }
-});
 
 // ============================================
 // 5. SCROLL ANIMATIONS (FADE-IN)

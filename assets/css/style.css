@@ -176,18 +176,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Moving Underline Indicator - DISABLED */
-/* .navbar ul .nav-underline {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    height: 3px;
-    width: 0;
-    background: var(--global-clr);
-    border-radius: 2px;
-    transition: transform 0.3s ease, width 0.3s ease;
-    pointer-events: none;
-} */
 
 /* ========================================================================
    SECTIONS - Base Styles
@@ -544,30 +532,6 @@ section {
     max-width: 90%;
 }
 
-/* Highlight Keywords */
-.hero-content .highlight-keyword {
-    color: rgba(0, 209, 255, 0.9);
-    font-weight: 500;
-    position: relative;
-    display: inline-block;
-}
-
-.hero-content .highlight-keyword::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -2px;
-    right: -2px;
-    height: 3px;
-    background: rgba(0, 209, 255, 0.2);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.hero-content .highlight-keyword:hover::before {
-    background: rgba(0, 209, 255, 0.4);
-    height: 4px;
-}
 
 /* ========================================================================
    BUTTONS
@@ -686,18 +650,6 @@ section {
     position: relative;
 }
 
-/* REMOVE or COMMENT OUT the ::before overlay since we're using gradient */
-/* .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: var(--border-radius-lg);
-    z-index: 1;
-} */
 
 .service-card > * {
     position: relative;

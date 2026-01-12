@@ -28,274 +28,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/animation.css">
-    <style>
-        /* Featured Portfolio Card Styles */
-        .featured-portfolio-section {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f3460 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured-portfolio-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(0, 209, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(0, 255, 163, 0.06) 0%, transparent 40%);
-            pointer-events: none;
-        }
-        
-        .featured-annotation-showcase {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            border: 2px solid rgba(0, 209, 255, 0.3);
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
-                        0 0 30px rgba(0, 209, 255, 0.15);
-        }
-        
-        .featured-annotation-showcase::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #00D1FF, #00FFA3, #00D1FF);
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-        }
-        
-        .featured-annotation-showcase:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
-                        0 0 40px rgba(0, 209, 255, 0.25),
-                        0 0 60px rgba(0, 255, 163, 0.15);
-            border-color: rgba(0, 209, 255, 0.5);
-        }
-        
-        .featured-annotation-showcase:hover::before {
-            opacity: 0.3;
-        }
-        
-        .featured-header {
-            background: linear-gradient(135deg, rgba(0, 209, 255, 0.15) 0%, rgba(0, 255, 163, 0.1) 100%);
-            padding: 25px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            border-bottom: 1px solid rgba(0, 209, 255, 0.2);
-        }
-        
-        .featured-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #00D1FF 0%, #00FFA3 100%);
-            color: #1a1a2e;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(0, 209, 255, 0.3);
-        }
-        
-        .featured-badge i {
-            font-size: 1rem;
-        }
-        
-        .external-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #00D1FF;
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 6px 12px;
-            background: rgba(0, 209, 255, 0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 209, 255, 0.3);
-        }
-        
-        .external-indicator i {
-            font-size: 0.85rem;
-        }
-        
-        .featured-body {
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .service-icon-large {
-            margin-bottom: 25px;
-        }
-        
-        .service-icon-large i {
-            color: #00D1FF;
-            font-size: 4rem;
-            filter: drop-shadow(0 4px 15px rgba(0, 209, 255, 0.3));
-        }
-        
-        .featured-body h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .featured-body p {
-            font-size: 1.15rem;
-            color: #c9d9e8;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .featured-cta {
-            background: linear-gradient(135deg, #00D1FF 0%, #00FFA3 100%);
-            border: none;
-            color: #1a1a2e;
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding: 18px 40px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 209, 255, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .featured-cta::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
-        }
-        
-        .featured-cta:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .featured-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 209, 255, 0.5),
-                        0 0 40px rgba(0, 255, 163, 0.3);
-            background: linear-gradient(135deg, #00FFA3 0%, #00D1FF 100%);
-            color: #1a1a2e;
-        }
-        
-        .featured-cta i {
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .featured-cta:hover i {
-            transform: translateX(5px);
-        }
-        
-        .security-note {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-        
-        .security-note i {
-            color: #00FFA3;
-        }
-        
-        /* Section Divider */
-        .section-divider {
-            text-align: center;
-            margin: 60px 0 40px;
-            position: relative;
-        }
-        
-        .section-divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.3), transparent);
-        }
-        
-        .section-divider span {
-            background: var(--dark-clr);
-            padding: 0 30px;
-            position: relative;
-            z-index: 1;
-            color: #00D1FF;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .featured-portfolio-section {
-                padding: 60px 0;
-            }
-            
-            .featured-header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
-            }
-            
-            .featured-body {
-                padding: 30px 20px;
-            }
-            
-            .featured-body h3 {
-                font-size: 1.8rem;
-            }
-            
-            .featured-body p {
-                font-size: 1rem;
-            }
-            
-            .featured-cta {
-                font-size: 1rem;
-                padding: 15px 30px;
-            }
-            
-            .service-icon-large i {
-                font-size: 3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+</head>
 
 <body>
     <!-- Header Placeholder -->
@@ -313,44 +47,80 @@
         </div>
     </section>
 
-    <!-- Featured Data Annotation Services -->
-    <section class="featured-portfolio-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="featured-annotation-showcase">
-                        <div class="featured-header">
-                            <div class="featured-badge">
-                                <i class="fa-solid fa-star"></i>
-                                <span>Featured Service</span>
-                            </div>
-                            <div class="external-indicator">
-                                <i class="fa-solid fa-external-link-alt"></i>
-                                <span>Dedicated Portfolio Site</span>
-                            </div>
+    <!-- Modern Projects Section -->
+    <section class="projects-section">
+        <div class="projects-header">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <p>Explore my work in data annotation, web development, and innovative technical solutions</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Benson Annotation Portfolio Card -->
+            <div class="project-card">
+                <div class="project-header-image">
+                    <img src="/assets/images/annotation_portfolio.jpg" alt="Benson Annotation Portfolio">
+                    <div class="project-badge">Featured</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Benson Annotation Portfolio</h3>
+                    <p class="project-description">
+                        Professional data annotation showcase website featuring comprehensive services, image annotation,data labeling, quality assurance processes, and detailed case studies for machine learning datasets.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://benson-annotation.netlify.app" target="_blank" class="project-link">
+                            Demo
+                        </a>
+                        <div class="project-microbadge-group">
+                            <div class="project-microbadge">React</div>
+                            <div class="project-microbadge">Vite</div>
+                            <div class="project-microbadge">TypeScript</div>
+                            <div class="project-microbadge">Tailwind CSS</div>
+                            <div class="project-microbadge">Radix UI</div>
+                            <div class="project-microbadge">Git</div>
+                            <div class="project-microbadge">Netlify</div>
                         </div>
-                        <div class="featured-body">
-                            <div class="service-icon-large">
-                                <i class="bi bi-image"></i>
-                            </div>
-                            <h3>Professional Data Annotation Services</h3>
-                            <p>
-                                Comprehensive image, text, video, and audio annotation for machine learning and AI applications. 
-                                Visit my dedicated portfolio to explore detailed case studies, service offerings, quality assurance 
-                                processes, and booking information for your annotation projects.
-                            </p>
-                            <a href="https://benson-annotation.netlify.app" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="featured-cta">
-                                <span>Visit Annotation Portfolio</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <div class="security-note">
-                                <i class="fa-solid fa-shield-halved"></i>
-                                <small>Secure external site with comprehensive service details</small>
-                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thamani Bakery POS Card -->
+            <div class="project-card">
+                <div class="project-header-image">
+                    <img src="/assets/Thamani_Bakery_Project/assets/images/thamani_cakes_hero.webp" alt="Thamani Bakery POS">
+                    <div class="project-badge">Web App</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Thamani Bakery POS</h3>
+                    <p class="project-description">
+                        A modern point-of-sale and digital prescence solution built for a local bakery. The project focused on improving customer experience, streamlining daily sales operations, and showcasing products online through a clean mobile-friendly interface.
+                    </p>
+                    <div class="project-links">
+                        <a href="/assets/Thamani_Bakery_Project/thamani_cakes_landing.html" target="_blank" class="project-link">
+                            Demo
+                        </a>
+                        <div class="project-microbadge-group">
+                            <div class="project-microbadge">HTML5</div>
+                            <div class="project-microbadge">CSS3</div>
+                            <div class="project-microbadge">JavaScript</div>
+                            <div class="project-microbadge">Netlify</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Dashboard Card -->
+            <div class="project-card">
+                <div class="project-header-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Interactive Dashboard">
+                    <div class="project-badge">Dashboard</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Analytics Dashboard</h3>
+                    <p class="project-description">
+                        Responsive dashboard application with real-time data visualization, modern UI components, and interactive charts for business intelligence.
+                    </p>
+                    <div class="project-links">
+                        
                     </div>
                 </div>
             </div>
@@ -362,77 +132,27 @@
         <span>Additional Projects</span>
     </div>
 
-    <!-- Other Projects Section -->
-    <section class="other-projects py-2">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title mb-4">Web Development <span class="highlight">& More</span></h2>
-                <p class="lead">Responsive web applications and innovative technical solutions</p>
-            </div>
-            
-            <div class="modern-projects-grid">
-                <div class="modern-project-card">
-                    <h3 class="project-title">Thamani Bakery POS</h3>
-                    <p class="project-desc">
-                        A point-of-sale system designed for bakery management, streamlining sales, inventory, and customer service.
+    <!-- Future Projects Section -->
+    <section class="projects-section">
+        <div class="projects-header">
+            <h2>Coming Soon</h2>
+            <p>Exploring innovative solutions and advanced technologies</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Advanced ML Solutions Card -->
+            <div class="project-card">
+                <div class="project-header-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop" alt="Advanced ML Solutions">
+                    <div class="project-badge">Coming Soon</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Advanced ML Solutions</h3>
+                    <p class="project-description">
+                        Exploring advanced machine learning applications and innovative solutions for complex data processing and automation challenges. Currently in research and development phase.
                     </p>
-                    <a href="assets/Thamani_Bakery_Project/thamani_cakes_landing.html" target="_blank" class="project-btn">View Project</a>
-                </div>
-
-                <div class="modern-project-card">
-                    <h3 class="project-title">Interactive Dashboard</h3>
-                    <p class="project-desc">A responsive dashboard application with real-time data visualization and modern UI components.</p>
-                    <a href="#" target="_blank" class="project-btn">View Demo</a>
-                </div>
-
-                <div class="modern-project-card">
-                    <h3 class="project-title">Portfolio Website</h3>
-                    <p class="project-desc">Clean, modern portfolio site showcasing web development skills with smooth animations.</p>
-                    <a href="#" target="_blank" class="project-btn">View Demo</a>
-                </div>
-            </div>
-
-            <!-- Future Projects -->
-            <div class="row g-4 justify-content-center mt-5 pt-3">
-                <div class="col-lg-6 col-md-9 mb-4 project-item" data-category="upcoming">
-                    <div class="project-container future-projects">
-                        <div class="project-header">
-                            <div class="project-badge upcoming">
-                                <span>Coming Soon</span>
-                            </div>
-                            <div class="project-type">
-                                <i class="bi bi-lightbulb"></i>
-                                <span>Innovation</span>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Advanced ML Solutions</h3>
-                            <p class="project-description">
-                                Exploring advanced machine learning applications and innovative solutions 
-                                for complex data processing and automation challenges.
-                            </p>
-                            <div class="project-details">
-                                <div class="detail-item">
-                                    <i class="bi bi-clock"></i>
-                                    <span>Research Phase</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="bi bi-gear"></i>
-                                    <span>Technology Exploration</span>
-                                </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Innovation</span>
-                                <span class="tag">Research</span>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn disabled" disabled>
-                                    <span>IN DEVELOPMENT</span>
-                                    <i class="fa-solid fa-rocket"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="project-links">
+                        
                     </div>
                 </div>
             </div>
