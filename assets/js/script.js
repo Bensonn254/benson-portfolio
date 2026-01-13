@@ -122,9 +122,8 @@ function initTypedText() {
         new Typed('.typed-text', {
             strings: [
                 'An Aspiring Web Developer,',
-                'a Data Annotation Specialist,', 'a Petroleum Engineer.'
-                ,
-            
+                'a Data Annotation Specialist,',
+                'a Petroleum Engineer.'
             ],
             typeSpeed: 50,
             backSpeed: 30,
@@ -132,7 +131,8 @@ function initTypedText() {
             loop: true,
             showCursor: true,
             cursorChar: '|',
-            smartBackspace: true
+            smartBackspace: true,
+            startDelay: 500
         });
     }
 }
@@ -183,9 +183,16 @@ document.addEventListener('headerLoaded', () => {
     initNavigation();
 });
 
-// Run on window load
+// Run on window load - ensure Typed.js is fully loaded
 window.addEventListener('load', () => {
     adjustBodyPadding();
+    // Re-initialize typed text after window load to ensure it works on mobile
+    setTimeout(() => {
+        const typedElement = document.querySelector('.typed-text');
+        if (typedElement && !typedElement.classList.contains('typed')) {
+            initTypedText();
+        }
+    }, 100);
 });
 
 // Keep padding synced on resize

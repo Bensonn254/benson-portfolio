@@ -145,4 +145,27 @@
     .project-card {
         animation-duration: 0.6s;
     }
+    
+    /* Typed text mobile styles */
+    .typed-text {
+        font-size: 1.2rem !important;
+        line-height: 1.3 !important;
+        min-height: 1.5em;
+        display: inline-block;
+    }
+    
+    .typed-cursor {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .typed-text {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .typed-cursor {
+        font-size: 1.1rem !important;
+    }
 }
