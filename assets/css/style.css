@@ -361,11 +361,16 @@ section {
     height: 2px;
     background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(15, 187, 255, 0.3) 20%, 
-        rgba(0, 209, 255, 0.4) 50%, 
-        rgba(15, 187, 255, 0.3) 80%, 
+        rgba(0, 209, 255, 0.3) 20%, 
+        rgba(0, 209, 255, 0.6) 50%, 
+        rgba(0, 209, 255, 0.3) 80%, 
         transparent 100%);
+    border-radius: 50%;
+    opacity: 0.8;
     z-index: -1;
+    /* Hardware acceleration for smooth mobile scrolling */
+    will-change: transform, opacity;
+    transform: translateZ(0); /* Forces GPU rendering */
 }
 
 .hero-container .tech-wave-1 {
@@ -1968,4 +1973,29 @@ section {
     .row.g-4 {
         --bs-gutter-y: 1rem;
     }
+}
+
+/* Fix for Edge and Android Chrome */
+.typed-text {
+    display: inline-block; /* Essential for height/width to work */
+    min-height: 1.2em;     /* Reserve vertical space */
+    min-width: 2px;        /* Prevent cursor jitter */
+    color: var(--global-clr);
+    font-weight: 600;       /* Make fallback text look intentional */
+    position: relative;
+    z-index: 10;           /* Ensure it sits above tech-waves */
+    vertical-align: middle;
+}
+
+/* Ensure cursor is visible and blinking in Edge */
+.typed-cursor {
+    color: var(--global-clr) !important;
+    opacity: 1;
+    z-index: 11;
+    display: inline-block;
+}
+
+/* If JS is disabled or fails, make sure the text looks static and clean */
+noscript .typed-cursor {
+    display: none !important;
 }

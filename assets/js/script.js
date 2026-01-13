@@ -117,24 +117,33 @@ function initNavigation() {
 // ============================================
 // 4. TYPED TEXT ANIMATION
 // ============================================
+let typedInstance = null; // Use a variable outside the function to track the instance
+
 function initTypedText() {
-    if (typeof Typed !== 'undefined') {
-        new Typed('.typed-text', {
-            strings: [
-                'An Aspiring Web Developer,',
-                'a Data Annotation Specialist,',
-                'a Petroleum Engineer.'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 3000,
-            loop: true,
-            showCursor: true,
-            cursorChar: '|',
-            smartBackspace: true,
-            startDelay: 500
-        });
+    const element = document.querySelector('.typed-text');
+    if (!element || typeof Typed === 'undefined') return;
+    
+    // 1. If an instance already exists, destroy it to prevent duplicates
+    if (typedInstance) {
+        typedInstance.destroy();
     }
+    
+    // 2. Initialize with showCursor: true
+    typedInstance = new Typed('.typed-text', {
+        strings: [
+            'An Aspiring Web Developer,',
+            'a Data Annotation Specialist,',
+            'a Petroleum Engineer.'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 3000,
+        loop: true,
+        showCursor: true,      // Must be true to see it!
+        cursorChar: '|',       // You can customize the character here
+        smartBackspace: true,
+        startDelay: 500
+    });
 }
 
 // ============================================
@@ -186,13 +195,6 @@ document.addEventListener('headerLoaded', () => {
 // Run on window load - ensure Typed.js is fully loaded
 window.addEventListener('load', () => {
     adjustBodyPadding();
-    // Re-initialize typed text after window load to ensure it works on mobile
-    setTimeout(() => {
-        const typedElement = document.querySelector('.typed-text');
-        if (typedElement && !typedElement.classList.contains('typed')) {
-            initTypedText();
-        }
-    }, 100);
 });
 
 // Keep padding synced on resize
