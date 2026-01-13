@@ -115,6 +115,29 @@ function initNavigation() {
 }
 
 // ============================================
+// 4. TYPED TEXT ANIMATION
+// ============================================
+function initTypedText() {
+    if (typeof Typed !== 'undefined') {
+        new Typed('.typed-text', {
+            strings: [
+                'An Aspiring Web Developer,',
+                'a Data Annotation Specialist,', 'a Petroleum Engineer.'
+                ,
+            
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 3000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+            smartBackspace: true
+        });
+    }
+}
+
+// ============================================
 // 5. SCROLL ANIMATIONS (FADE-IN)
 // ============================================
 function initScrollAnimations() {
@@ -142,6 +165,7 @@ function initAll() {
     initializeNavbar();
     adjustBodyPadding();
     initNavigation();
+    initTypedText();
     initScrollAnimations();
 }
 
