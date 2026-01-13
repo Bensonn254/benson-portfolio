@@ -1,5 +1,3 @@
-// 1. NAVBAR SCROLL DETECTION & AUTO-HIDE
-// ============================================
 function initializeNavbar() {
     const header = document.querySelector('header');
     if (!header) return;
@@ -9,26 +7,21 @@ function initializeNavbar() {
     let ticking = false;
 
     function updateNavbar(scrollTop) {
-        // Add solid background when scrolled past 50px
         if (scrollTop > 50) {
             header.classList.add('navbar-scrolled');
         } else {
             header.classList.remove('navbar-scrolled');
         }
 
-        // Auto-hide logic (only after scrolling past threshold)
         if (scrollTop > scrollThreshold) {
             if (scrollTop > lastScrollTop) {
-                // Scrolling DOWN - hide navbar
                 header.classList.add('navbar-hidden');
                 header.classList.remove('navbar-visible');
             } else {
-                // Scrolling UP - show navbar
                 header.classList.remove('navbar-hidden');
                 header.classList.add('navbar-visible');
             }
         } else {
-            // At top of page - always visible and transparent
             header.classList.remove('navbar-hidden');
             header.classList.add('navbar-visible');
         }
@@ -48,13 +41,9 @@ function initializeNavbar() {
         }
     });
 
-    // Initialize on page load
     updateNavbar(window.pageYOffset || document.documentElement.scrollTop);
 }
 
-// ============================================
-// 2. DYNAMIC BODY PADDING (PREVENTS OVERLAP)
-// ============================================
 function adjustBodyPadding() {
     const header = document.querySelector('header');
     if (!header) return;
@@ -64,14 +53,10 @@ function adjustBodyPadding() {
     document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
 }
 
-// ============================================
-// 3. NAVIGATION ACTIVE STATE & UNDERLINE
-// ============================================
 function initNavigation() {
     const nav = document.querySelector('.navbar ul');
     if (!nav) return;
     
-    // Prevent double initialization
     if (nav.dataset.navInit === '1') return;
     nav.dataset.navInit = '1';
 
@@ -82,11 +67,9 @@ function initNavigation() {
         if (link) link.classList.add('active');
     }
 
-    // Determine active page
     const currentPath = window.location.pathname.toLowerCase();
     let activeLink = null;
 
-    // Match by pathname
     for (const link of links) {
         const href = link.getAttribute('href') || '';
         try {
@@ -101,7 +84,6 @@ function initNavigation() {
         } catch (e) {}
     }
 
-    // Fallback to class-based detection
     if (!activeLink) {
         if (currentPath.includes('/about')) activeLink = nav.querySelector('.nav-about');
         else if (currentPath.includes('/expertise')) activeLink = nav.querySelector('.nav-expertise');
@@ -114,21 +96,16 @@ function initNavigation() {
     setActive(activeLink || links[0]);
 }
 
-// ============================================
-// 4. TYPED TEXT ANIMATION
-// ============================================
-let typedInstance = null; // Use a variable outside the function to track the instance
+let typedInstance = null;
 
 function initTypedText() {
     const element = document.querySelector('.typed-text');
     if (!element || typeof Typed === 'undefined') return;
     
-    // 1. If an instance already exists, destroy it to prevent duplicates
     if (typedInstance) {
         typedInstance.destroy();
     }
     
-    // 2. Initialize with showCursor: true
     typedInstance = new Typed('.typed-text', {
         strings: [
             'An Aspiring Web Developer,',
@@ -139,16 +116,13 @@ function initTypedText() {
         backSpeed: 30,
         backDelay: 3000,
         loop: true,
-        showCursor: true,      // Must be true to see it!
-        cursorChar: '|',       // You can customize the character here
+        showCursor: true,
+        cursorChar: '|',
         smartBackspace: true,
         startDelay: 500
     });
 }
 
-// ============================================
-// 5. SCROLL ANIMATIONS (FADE-IN)
-// ============================================
 function initScrollAnimations() {
     const fadeElements = document.querySelectorAll('.fade-in, .about');
     if (fadeElements.length === 0) return;
@@ -167,9 +141,6 @@ function initScrollAnimations() {
     fadeElements.forEach(el => observer.observe(el));
 }
 
-// ============================================
-// 6. INITIALIZE EVERYTHING
-// ============================================
 function initAll() {
     initializeNavbar();
     adjustBodyPadding();
@@ -178,24 +149,20 @@ function initAll() {
     initScrollAnimations();
 }
 
-// Run on DOM ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
 } else {
     initAll();
 }
 
-// Run when header is dynamically loaded
 document.addEventListener('headerLoaded', () => {
     initializeNavbar();
     adjustBodyPadding();
     initNavigation();
 });
 
-// Run on window load - ensure Typed.js is fully loaded
 window.addEventListener('load', () => {
     adjustBodyPadding();
 });
 
-// Keep padding synced on resize
 window.addEventListener('resize', adjustBodyPadding);

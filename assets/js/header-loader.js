@@ -1,7 +1,3 @@
-/**
- * Header Loader - Dynamic Header Injection
- */
-
 (function() {
     'use strict';
 

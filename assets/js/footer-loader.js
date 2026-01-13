@@ -1,7 +1,3 @@
-/**
- * Footer Loader - Dynamic Footer Injection
- */
-
 (function() {
     'use strict';
 

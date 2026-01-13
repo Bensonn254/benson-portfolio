@@ -50,7 +50,7 @@ body {
     line-height: 1.3;
     text-decoration: none;
     letter-spacing: 1px;
-    padding-top: var(--header-height, 100px); /* ✅ FIXED - Dynamic padding */
+    padding-top: var(--header-height, 100px); 
 }
 
 /* ========================================================================
@@ -58,7 +58,7 @@ body {
    ======================================================================== */
 header {
     width: 100%;
-    background: rgba(15, 25, 35, 0.1); /* Glassmorphism base */
+    background: rgba(15, 25, 35, 0.1); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -90,7 +90,7 @@ header {
     min-height: 70px;
 }
 
-/* Navbar State Classes */
+
 .navbar-hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -113,7 +113,7 @@ header {
     visibility: visible;
 }
 
-/* Logo */
+
 .logo {
     position: relative;
     font-size: 2.5rem;
@@ -129,7 +129,7 @@ header {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Menu */
+
 .navbar ul {
     display: flex;
     gap: 0.5rem;
@@ -184,13 +184,13 @@ section {
     padding: 4rem 0;
     position: relative;
     z-index: 1;
-    /* ✅ FIXED - margin-top removed, body padding handles spacing */
+    
 }
 .section-divider {
   margin-bottom: 0.5rem !important;
 }
 
-/* Section Light - Subtle Background for Visual Flow */
+
 .section-light {
     background: linear-gradient(135deg, 
         rgba(8, 29, 44, 0.95) 0%, 
@@ -265,7 +265,7 @@ section {
     overflow: hidden;
 }
 
-/* Premium Tech-Wave Background */
+
 .hero-container::before {
     content: '';
     position: absolute;
@@ -281,7 +281,7 @@ section {
     z-index: -5;
 }
 
-/* Studio Lighting Layer */
+
 .hero-container::after {
     content: '';
     position: absolute;
@@ -303,7 +303,7 @@ section {
     z-index: -4;
 }
 
-/* Studio Vignette */
+
 .hero-container .studio-vignette {
     position: absolute;
     top: 0;
@@ -320,7 +320,7 @@ section {
     pointer-events: none;
 }
 
-/* Enhanced Grain Overlay */
+
 .hero-container .studio-grain {
     position: absolute;
     top: 0;
@@ -352,7 +352,7 @@ section {
     100% { background-position: 4px 4px, -6px 6px, 8px -8px; }
 }
 
-/* Tech Wave Lines */
+
 .hero-container .tech-wave-1,
 .hero-container .tech-wave-2,
 .hero-container .tech-wave-3 {
@@ -368,9 +368,9 @@ section {
     border-radius: 50%;
     opacity: 0.8;
     z-index: -1;
-    /* Hardware acceleration for smooth mobile scrolling */
+    
     will-change: transform, opacity;
-    transform: translateZ(0); /* Forces GPU rendering */
+    transform: translateZ(0); 
 }
 
 .hero-container .tech-wave-1 {
@@ -402,7 +402,7 @@ section {
     }
 }
 
-/* Hero Image (Profile Photo) */
+
 .hero-image {
     position: relative;
     display: inline-block;
@@ -477,7 +477,7 @@ section {
     }
 }
 
-/* Hero Content */
+
 .hero-content {
     max-width: 50%;
     line-height: 1.4;
@@ -636,12 +636,12 @@ section {
 }
 
 .service-card {
-    /* Combine background and overlay in one property */
+    
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('../images/annotation_portfolio_bg.jpg') center/cover no-repeat;
     
-    /* Alternative if relative path doesn't work: */
+    
     /* background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('/assets/images/annotation_portfolio_bg.jpg') center/cover no-repeat; */
@@ -650,7 +650,7 @@ section {
     border-radius: var(--border-radius-lg);
     padding: 2rem;
     height: 100%;
-    min-height: 350px; /* Ensure it has height */
+    min-height: 350px; 
     transition: all var(--transition-fast);
     position: relative;
 }
@@ -715,10 +715,10 @@ section {
     font-weight: bold;
 }
 
-/* Mobile optimization */
+
 @media (max-width: 768px) {
     .service-card {
-        /* Remove fixed attachment on mobile for better performance */
+        
         background-attachment: scroll;
         min-height: 300px;
     }
@@ -1674,7 +1674,7 @@ section {
         gap: 1.25rem;
     }
     
-    /* Navigation Tablet Optimization */
+    
     .navbar {
         padding: 0.5rem 3%;
         margin: 0 0.5rem;
@@ -1697,7 +1697,7 @@ section {
 }
 
 @media (max-width: 768px) {
-    /* Hero Section Mobile */
+    
     .hero-container {
         flex-direction: column;
         text-align: center;
@@ -1759,7 +1759,7 @@ section {
         max-width: 100%;
     }
     
-    /* Navigation Mobile - Horizontal Layout */
+    
     .navbar {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -1768,12 +1768,12 @@ section {
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
     }
     
     .navbar::-webkit-scrollbar {
-        display: none; /* Chrome/Safari/Opera */
+        display: none; 
     }
     
     .navbar ul {
@@ -1811,7 +1811,7 @@ section {
         margin-right: 1rem;
     }
     
-    /* Buttons Mobile */
+    
     .hero-btn {
         flex-direction: column;
         gap: 1rem;
@@ -1824,7 +1824,7 @@ section {
         font-size: 1.1rem;
     }
     
-    /* Section Mobile */
+    
     section {
         padding: 4% 5%;
     }
@@ -1834,13 +1834,13 @@ section {
         margin-bottom: 1rem;
     }
     
-    /* Form Mobile */
+    
     .form-control {
         font-size: 0.9rem;
         padding: 0.8rem;
     }
     
-    /* Footer Mobile */
+    
     .footer-section {
         padding: 40px 0 0;
         margin-top: 60px;
@@ -1885,7 +1885,7 @@ section {
         margin-bottom: 10px;
     }
     
-    /* Process Timeline Mobile */
+    
     .process-timeline {
         flex-direction: column;
         align-items: stretch;
@@ -1953,7 +1953,7 @@ section {
         margin: 0 auto 0.5rem;
     }
     
-    /* Text overflow prevention */
+    
     h1, h2, h3, h4, h5, h6 {
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -1964,7 +1964,7 @@ section {
         overflow-wrap: break-word;
     }
     
-    /* Container spacing */
+    
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -1975,19 +1975,19 @@ section {
     }
 }
 
-/* Fix for Edge and Android Chrome */
+
 .typed-text {
-    display: inline-block; /* Essential for height/width to work */
-    min-height: 1.2em;     /* Reserve vertical space */
-    min-width: 2px;        /* Prevent cursor jitter */
+    display: inline-block; 
+    min-height: 1.2em;     
+    min-width: 2px;        
     color: var(--global-clr);
-    font-weight: 600;       /* Make fallback text look intentional */
+    font-weight: 600;       
     position: relative;
-    z-index: 10;           /* Ensure it sits above tech-waves */
+    z-index: 10;           
     vertical-align: middle;
 }
 
-/* Ensure cursor is visible and blinking in Edge */
+
 .typed-cursor {
     color: var(--global-clr) !important;
     opacity: 1;
@@ -1995,7 +1995,7 @@ section {
     display: inline-block;
 }
 
-/* If JS is disabled or fails, make sure the text looks static and clean */
+
 noscript .typed-cursor {
     display: none !important;
 }
