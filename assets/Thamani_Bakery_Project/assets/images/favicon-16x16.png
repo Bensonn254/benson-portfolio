@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="7.5" fill="#FFD95D" stroke="#E6C04A" stroke-width="0.5"/>
+  <rect x="3" y="9" width="10" height="4" fill="#8B4513" stroke="#654321" stroke-width="0.3" rx="0.5"/>
+  <rect x="3" y="8" width="10" height="1.5" fill="#F4A460" stroke="#CD853F" stroke-width="0.2"/>
+  <rect x="3" y="7" width="10" height="1.5" fill="#FFB6C1" stroke="#FF69B4" stroke-width="0.2"/>
+  <path d="M 3 6.5 Q 4 5.5 5 6.5 T 7 6.5 T 9 6.5 T 11 6.5 T 13 6.5" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="8" cy="5.5" r="1" fill="#DC143C" stroke="#8B0000" stroke-width="0.3"/>
+  <rect x="4.5" y="6" width="0.5" height="1.5" fill="#FF69B4" transform="rotate(15 4.75 6.75)"/>
+  <rect x="6" y="6" width="0.5" height="1.5" fill="#4169E1" transform="rotate(-20 6.25 6.75)"/>
+  <rect x="9.5" y="6" width="0.5" height="1.5" fill="#32CD32" transform="rotate(30 9.75 6.75)"/>
+  <rect x="11" y="6" width="0.5" height="1.5" fill="#FFD700" transform="rotate(-10 11.25 6.75)"/>
+  <text x="8" y="14.5" font-family="Arial" font-size="3" font-weight="bold" fill="#576238" text-anchor="middle">T</text>
+</svg>
