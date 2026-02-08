@@ -18,7 +18,7 @@ const testimonials = [
         role: "Kyle Pharmacy",
         date: "25 Jan, 2025",
         rating: 5.0,
-        img: "/assets/images/kyle_pharmacy.png",
+        img: "/assets/images/kyle_pharmacy_small.jpg",
         text: "Benson's targeted web solution put Kyle Pharmacy on the map in Kitengela. Our local visibility and customer trust skyrocketed immediately!"
     },
     {

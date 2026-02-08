@@ -111,13 +111,17 @@ function initTypedText() {
     const element = document.querySelector('.typed-text');
     if (!element) return;
     
-    const texts = [
-        'Full-Stack Web Developer'
-    ];
+    const texts = ['Full-Stack Web Developer'];
     
     let currentIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+    if (prefersReducedMotion || isSmallScreen) {
+        element.textContent = texts[0];
+        return;
+    }
     
     function typeChar() {
         const text = texts[currentIndex];
