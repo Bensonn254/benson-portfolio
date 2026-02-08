@@ -3,9 +3,9 @@
 
     const CONFIG = {
         PATHS: [
-            '/assets/includes/header.html',
-            'assets/includes/header.html',
-            '../assets/includes/header.html'
+            '/assets/css/includes/header.html',
+            'assets/css/includes/header.html',
+            '../assets/css/includes/header.html'
         ],
         PLACEHOLDER_ID: 'header-placeholder'
     };

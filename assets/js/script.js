@@ -1,5 +1,13 @@
+// Cache DOM elements for better performance
+let headerElement = null;
+
+function getHeader() {
+    if (!headerElement) headerElement = document.querySelector('header');
+    return headerElement;
+}
+
 function initializeNavbar() {
-    const header = document.querySelector('header');
+    const header = getHeader();
     if (!header) return;
     
     let lastScrollTop = 0;
@@ -45,7 +53,7 @@ function initializeNavbar() {
 }
 
 function adjustBodyPadding() {
-    const header = document.querySelector('header');
+    const header = getHeader();
     if (!header) return;
     
     const headerHeight = header.offsetHeight;
@@ -98,29 +106,48 @@ function initNavigation() {
 
 let typedInstance = null;
 
+// Lightweight typing animation without external library
 function initTypedText() {
     const element = document.querySelector('.typed-text');
-    if (!element || typeof Typed === 'undefined') return;
+    if (!element) return;
     
-    if (typedInstance) {
-        typedInstance.destroy();
+    const texts = [
+        'Full-Stack Web Developer'
+    ];
+    
+    let currentIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeChar() {
+        const text = texts[currentIndex];
+        
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+        
+        element.textContent = text.substring(0, charIndex);
+        
+        let speed = 80;
+        if (isDeleting) speed = 40;
+        
+        if (!isDeleting && charIndex === text.length) {
+            // Wait before deleting
+            speed = 6000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            // Move to next text
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % texts.length;
+            speed = 1000;
+        }
+        
+        setTimeout(typeChar, speed);
     }
     
-    typedInstance = new Typed('.typed-text', {
-        strings: [
-            'An Aspiring Web Developer,',
-            'a Data Annotation Specialist,',
-            'a Petroleum Engineer.'
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 3000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|',
-        smartBackspace: true,
-        startDelay: 500
-    });
+    typeChar();
 }
 
 function initScrollAnimations() {

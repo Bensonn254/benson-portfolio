@@ -3,9 +3,9 @@
 
     const CONFIG = {
         PATHS: [
-            '/assets/includes/footer.html',
-            'assets/includes/footer.html',
-            '../assets/includes/footer.html'
+            '/assets/css/includes/footer.html',
+            'assets/css/includes/footer.html',
+            '../assets/css/includes/footer.html'
         ],
         PLACEHOLDER_ID: 'footer-placeholder'
     };
@@ -18,7 +18,7 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="footer-brand">
                             <h3 class="footer-logo">Benson Portfolio</h3>
-                            <p class="footer-tagline">Professional Data Annotation & Web Development</p>
+                            <p class="footer-tagline">Full-Stack Web Developer</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
@@ -47,15 +47,15 @@
                             </div>
                         </div>
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/bensonn254" target="_blank" class="social-icon">
+                            <a href="https://www.facebook.com/bensonn254" target="_blank" rel="noopener noreferrer" class="social-icon">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://github.com/Bensonn254" target="_blank" class="social-icon">
+                            <a href="https://github.com/Bensonn254" target="_blank" rel="noopener noreferrer" class="social-icon">
                                 <i class="fa-brands fa-github"></i>
                             </a>
-                            <a href="#" class="social-icon social-disabled">
+                            <span class="social-icon social-disabled" aria-label="LinkedIn (Coming Soon)">
                                 <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
+                            </span>
                         </div>
                     </div>
                 </div>

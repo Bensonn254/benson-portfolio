@@ -206,21 +206,22 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
-    height: 44px;
+    min-width: 10rem;
+    min-height: 44px;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.6rem 1.2rem;
+    padding: 0.6rem 1.5rem;
     color: #fff;
     background: var(--global-clr);
     border: 2px solid var(--global-clr);
     border-radius: 12px;
     cursor: pointer;
-    overflow: hidden;
     z-index: 1;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0, 209, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 209, 254, 0.2);
+    text-align: center;
+    line-height: 1.2;
 }
 
 .project-link:hover {
